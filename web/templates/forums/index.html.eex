@@ -1,0 +1,32 @@
+<h2>Listing user</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Users</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Name</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for forums <- @user do %>
+    <tr>
+      <td><%= forums.users %></td>
+      <td><%= forums.username %></td>
+      <td><%= forums.email %></td>
+      <td><%= forums.name %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: forums_path(@conn, :show, forums), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: forums_path(@conn, :edit, forums), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: forums_path(@conn, :delete, forums), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New forums", to: forums_path(@conn, :new) %>

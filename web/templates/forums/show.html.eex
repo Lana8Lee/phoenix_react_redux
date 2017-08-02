@@ -1,0 +1,28 @@
+<h2>Show forums</h2>
+
+<ul>
+
+  <li>
+    <strong>Users:</strong>
+    <%= @forums.users %>
+  </li>
+
+  <li>
+    <strong>Username:</strong>
+    <%= @forums.username %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @forums.email %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @forums.name %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: forums_path(@conn, :edit, @forums) %>
+<%= link "Back", to: forums_path(@conn, :index) %>

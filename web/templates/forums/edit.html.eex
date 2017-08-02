@@ -1,0 +1,6 @@
+<h2>Edit forums</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: forums_path(@conn, :update, @forums) %>
+
+<%= link "Back", to: forums_path(@conn, :index) %>
